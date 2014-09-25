@@ -12,7 +12,7 @@ if [[ ! -d /Applications/Xcode.app ]]
 then
 	echo "$NAME: Xcode is required, but not installed. Please install Xcode from the Mac App Store."
 
-	macappstore://itunes.apple.com/us/app/xcode/id497799835?mt=12
+	open 'macappstore://itunes.apple.com/us/app/xcode/id497799835?mt=12'
 
 	exit 1
 
