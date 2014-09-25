@@ -3,6 +3,10 @@ bash-fix
 
 Download and compile a new version of bash to replace vulnerable one
 
+## Background ##
+
+[Troy Hunt: Everything you need to know about the Shellshock Bash bug](http://www.troyhunt.com/2014/09/everything-you-need-to-know-about.html?m=1)
+
 
 
 ## Sources: 
