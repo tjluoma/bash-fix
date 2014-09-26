@@ -127,9 +127,11 @@ EOINPUT
 sudo -v
 
 sudo cp -v /bin/bash /bin/bash.old && \
-	sudo cp -v /bin/sh /bin/sh.old && \
-		sudo cp -v build/Release/bash /bin && \
-			sudo cp -v build/Release/sh /bin
+	sudo /bin/chmod a-x /bin/sh.old && \
+		sudo cp -v /bin/sh /bin/sh.old && \
+			sudo /bin/chmod a-x /bin/bash.old && \
+				sudo cp -v build/Release/bash /bin/bash && \
+					sudo cp -v build/Release/sh /bin/sh
 
 EXIT="$?"
 
