@@ -44,7 +44,9 @@ cd bash-92/bash-3.2
 echo "$NAME: CWD is now $PWD"
 echo "$NAME: Downloading and applying bash patch from gnu.org..."
 
-curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-052 | patch -p0
+curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-052 | patch -p0 && \
+curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-053 | patch -p0 && \
+curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-054 | patch -p0
 
 EXIT="$?"
 
@@ -83,11 +85,11 @@ fi
 
 echo "$NAME: Here is the new version number for the version of bash that you just built (must be 3.2.52(1) or later):"
 
-build/Release/bash --version # GNU bash, version 3.2.52(1)-release
+build/Release/bash --version # GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
 
 echo "\n\n$NAME: Here is the new version number for the version of sh that you just built (must be 3.2.52(1) or later):"
 
-build/Release/sh --version   # GNU bash, version 3.2.52(1)-release
+build/Release/sh --version   # GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
 
 echo "
 
