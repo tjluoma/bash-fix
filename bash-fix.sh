@@ -8,7 +8,8 @@
 
 NAME="bash-fix.sh"
 
-if [[ ! -d /Applications/Xcode.app && ! -d /Applications/Xcode6-Beta4.app ]]
+	# This should match Xcode in many variations
+if [[ ! -d /Applications/Xcode*.app ]]
 then
 	echo "$NAME [FATAL]: Xcode is required, but not installed. Please install Xcode from the Mac App Store."
 
