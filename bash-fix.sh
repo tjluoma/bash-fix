@@ -8,7 +8,7 @@
 
 NAME="$0:t:r"
 
-if [[ ! -d /Applications/Xcode.app ]]
+if [[ ! -d /Applications/Xcode.app && ! -d /Applications/Xcode6-Beta4.app ]]
 then
 	echo "$NAME: Xcode is required, but not installed. Please install Xcode from the Mac App Store."
 
