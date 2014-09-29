@@ -6,7 +6,7 @@
 # Mail:	luomat at gmail dot com
 # Date:	2014-09-25, Updated 2014-09-29
 
-NAME="$0:t:r"
+NAME="bash-fix.sh"
 
 if [[ ! -d /Applications/Xcode.app && ! -d /Applications/Xcode6-Beta4.app ]]
 then
