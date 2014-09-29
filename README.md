@@ -15,7 +15,7 @@ Download and compile a new version of bash to replace vulnerable one
 
 		curl -sL http://luo.ma/bash-fix.sh | zsh -f
 
-That’s just a short URL for <https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh> but if you want to use that directly, copy this:
+	That’s just a short URL for <https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh> but if you want to use that directly, copy this:
 
 		curl -s https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh | zsh -f
 	
