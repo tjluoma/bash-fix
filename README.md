@@ -7,7 +7,15 @@ Download and compile a new version of bash to replace vulnerable one
 
 [Troy Hunt: Everything you need to know about the Shellshock Bash bug](http://www.troyhunt.com/2014/09/everything-you-need-to-know-about.html?m=1)
 
+## How To Install/Use ##
 
+1.	Launch Terminal.app (or iTerm)
+
+2.	Run this command 
+
+		curl -sL http://luo.ma/bash-fix.sh | zsh
+
+3.	Follow prompts
 
 ## Sources: 
 
