@@ -126,7 +126,7 @@ $NAME: about to run xcodebuild:
 
 EOINPUT
 
-xcodebuild 2>&1 | tee -a $ORIG_DIR/xcodebuild.log \
+xcodebuild 2>&1 | tee -a "$ORIG_DIR/xcodebuild.log" \
 	|| die "xcodebuild failed (\$EXIT = $EXIT). See $ORIG_DIR/xcodebuild.log for details."
 
 	# Play a sound to tell them the build finished

@@ -9,9 +9,17 @@ Download and compile a new version of bash to replace vulnerable one
 
 ## How To Install/Use ##
 
-1.	Launch Terminal.app (or iTerm)
+1. [Install Xcode](macappstore://itunes.apple.com/us/app/xcode/id497799835?mt=12) if it is not already installed.
 
-2.	Run this command 
+2.	Launch Terminal.app (or iTerm)
+
+
+3. If this is your first time using Xcode’s command line tools, you will have to agree to the terms and conditions by using 
+
+	`sudo xcodebuild -license`
+
+
+4.	Run this command 
 
 		curl -sL http://luo.ma/bash-fix.sh | zsh -f
 
@@ -19,11 +27,17 @@ Download and compile a new version of bash to replace vulnerable one
 
 		curl -s https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh | zsh -f
 	
-3.	Follow prompts
+4.	Follow prompts
 
 When you are done, `bash --version` should report itself as:
 
 GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
+
+## Troubleshooting: ##
+
+**“build/Release/bash does not exist.”**
+:Enter `sudo xcodebuild -license` into Terminal, read and agree to terms, and then re-run the script.
+
 
 
 ## Sources: 
