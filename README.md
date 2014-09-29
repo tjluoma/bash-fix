@@ -21,6 +21,11 @@ Download and compile a new version of bash to replace vulnerable one
 	
 3.	Follow prompts
 
+When you are done, `bash --version` should report itself as:
+
+GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
+
+
 ## Sources: 
 
 1.	<http://apple.stackexchange.com/questions/146849/how-do-i-recompile-bash-to-avoid-the-remote-exploit-cve-2014-6271-and-cve-2014-7/146851#146851> 
