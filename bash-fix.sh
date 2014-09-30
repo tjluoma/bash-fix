@@ -11,7 +11,7 @@ NAME="bash-fix.sh"
 	# This should match Xcode in many variations, betas, etc.
 XCODE=`find /Applications -maxdepth 1 -type d -iname xcode\*.app -print`
 
-if [ "$XCODE" = "" ]
+if [[ "$XCODE" == "" ]]
 then
 	echo "$NAME [FATAL]: Xcode is required, but not installed. Please install Xcode from the Mac App Store."
 
