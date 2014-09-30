@@ -1,6 +1,19 @@
 bash-fix
 ========
 
+## Official Patch From Apple
+
+On 30 September 2014 Apple made official patches available for the following versions of OS X:
+
+* [Mavericks](http://support.apple.com/kb/DL1769)
+* [Mountain Lion](http://support.apple.com/kb/DL1768)
+* [Lion](http://support.apple.com/kb/DL1767)
+
+I would encourage people to use those unless new vulnerabilities are found.
+
+
+## Summary
+
 Download and compile a new version of bash to replace vulnerable one
 
 ## Background ##
