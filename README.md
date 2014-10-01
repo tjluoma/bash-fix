@@ -9,7 +9,13 @@ On 30 September 2014 Apple made official patches available for the following ver
 * [Mountain Lion](http://support.apple.com/kb/DL1768)
 * [Lion](http://support.apple.com/kb/DL1767)
 
-I would encourage people to use those unless new vulnerabilities are found.
+<del>I would encourage people to use those unless new vulnerabilities are found.</del>
+
+**Update 2014-10-01:** Apple’s fixed `bash` is `GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)` which is still vulnerable to this:
+
+	env '__BASH_FUNC<ls>()'="() { echo Game Over; }" /bin/bash -c ls
+
+Compiling `bash` from this script will build `GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)` which is not vulnerable to that.
 
 
 ## Summary
