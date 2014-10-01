@@ -17,6 +17,12 @@ On 30 September 2014 Apple made official patches available for the following ver
 
 Compiling `bash` from this script will build `GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)` which is not vulnerable to that.
 
+(There may be other vulnerabilities in both, of course.)
+
+I installed Apple’s fix and then re-ran this script to have a more current version of `bash`. As always, YMMV, and use at your own risk, etc.
+
+I will continue to update this script as I learn of more vulnerabilities. (Pull requests for new official patches are always welcome.)
+
 
 ## Summary
 
