@@ -109,9 +109,9 @@ EXIT="$?"
 
 if [ "$EXIT" = "0" ]
 then
-	msg "patch bash32-053 successfully applied"
+	msg "patch bash32-054 successfully applied"
 else
-	die "patch bash32-053 FAILED"
+	die "patch bash32-054 FAILED"
 fi
 
 ##################################################################################################
