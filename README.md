@@ -74,8 +74,9 @@ When you are done, `bash --version` should report itself as:
 
 ## Troubleshooting: ##
 
-**“build/Release/bash does not exist.”**
-:Enter `sudo xcodebuild -license` into Terminal, read and agree to terms, and then re-run the script.
+_Error:_ **“build/Release/bash does not exist.”**
+
+_Fix:_ Enter `sudo xcodebuild -license` into Terminal, read and agree to terms, and then re-run the script.
 
 
 
