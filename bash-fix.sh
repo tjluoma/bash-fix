@@ -116,6 +116,20 @@ fi
 
 ##################################################################################################
 
+msg "Downloading and applying bash32-055 from gnu.org..."
+curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-055 | patch -p0
+
+EXIT="$?"
+
+if [ "$EXIT" = "0" ]
+then
+	msg "patch bash32-055 successfully applied"
+else
+	die "patch bash32-055 FAILED"
+fi
+
+##################################################################################################
+
 cd ..
 
 msg "CWD is now $PWD"
