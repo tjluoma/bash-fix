@@ -1,7 +1,13 @@
 bash-fix
 ========
 
-## Official Patch From Apple
+## Summary
+
+Download and compile a new version of bash to replace vulnerable one.
+
+## “Didn’t Apple fix this?”
+
+Yes and no.
 
 On 30 September 2014 Apple made official patches available for the following versions of OS X:
 
@@ -9,24 +15,32 @@ On 30 September 2014 Apple made official patches available for the following ver
 * [Mountain Lion](http://support.apple.com/kb/DL1768)
 * [Lion](http://support.apple.com/kb/DL1767)
 
-<del>I would encourage people to use those unless new vulnerabilities are found.</del>
-
-**Update 2014-10-01:** Apple’s fixed `bash` is `GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)` which is still vulnerable to this:
+However, Apple’s fixed `bash` is `GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)` which is still vulnerable to this:
 
 	env '__BASH_FUNC<ls>()'="() { echo Game Over; }" /bin/bash -c ls
 
-Compiling `bash` from this script will build `GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)` which is not vulnerable to that.
+**Other problems are still being found and patched.**
 
-(There may be other vulnerabilities in both, of course.)
+As of 2014-10-02, compiling `bash` from this script will build `GNU bash, version 3.2.55(1)-release (x86_64-apple-darwin13)` .
 
-I installed Apple’s fix and then re-ran this script to have a more current version of `bash`. As always, YMMV, and use at your own risk, etc.
+There may _still_ be vulnerabilities in `GNU bash, version 3.2.55(1)-release (x86_64-apple-darwin13)` but I’d rather be current on my Mac servers. 
 
-I will continue to update this script as I learn of more vulnerabilities. (Pull requests for new official patches are always welcome.)
+If you are a regular Mac user and aren’t running a Mac server, you _probably_ don’t need to worry about this and can wait for Apple’s next official update. If you _are_ running a Mac server, you should find some way to stay current, whether it is this script or your own.
+
+(Personally, I installed Apple’s fix and then re-ran this script to have a more current version of `bash`. )
+
+I will continue to update this script as I learn of more vulnerabilities. Pull requests for new official patches are always welcome. Thanks to [those who have already contributed](https://github.com/tjluoma/bash-fix/graphs/contributors).
 
 
-## Summary
 
-Download and compile a new version of bash to replace vulnerable one
+## Disclaimer
+
+**As always, YMMV, and use _entirely_ at your own risk.**
+
+No warranty expressed or implied for any suitability for any purpose. 
+
+If something breaks, you own both pieces and all of the responsibility, and so on.
+
 
 ## Background ##
 
@@ -48,7 +62,7 @@ Download and compile a new version of bash to replace vulnerable one
 
 		curl -sL http://luo.ma/bash-fix.sh | zsh -f
 
-	That’s just a short URL for <https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh> but if you want to use that directly, copy this:
+	That’s just a short URL for <https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh> but if you would rather not use the short URL, use this instead:
 
 		curl -s https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh | zsh -f
 	
@@ -56,7 +70,7 @@ Download and compile a new version of bash to replace vulnerable one
 
 When you are done, `bash --version` should report itself as:
 
-GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
+**GNU bash, version 3.2.55(1)-release (x86_64-apple-darwin13)**
 
 ## Troubleshooting: ##
 
