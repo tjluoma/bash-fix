@@ -21,7 +21,7 @@ However, Apple’s fixed `bash` is `GNU bash, version 3.2.53(1)-release (x86_64-
 
 **Other problems are still being found and patched.**
 
-As of 2014-10-02, compiling `bash` from this script will build `GNU bash, version 3.2.55(1)-release (x86_64-apple-darwin13)` .
+As of 2014-10-02, compiling `bash` from this script will build `GNU bash, version 3.2.55(1)-release (x86_64-apple-darwin13)`.
 
 There may _still_ be vulnerabilities in `GNU bash, version 3.2.55(1)-release (x86_64-apple-darwin13)` but I’d rather be current on my Mac servers. 
 
