@@ -130,21 +130,47 @@ fi
 
 ##################################################################################################
 
+msg "Downloading and applying bash32-056 from gnu.org..."
+curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-056 | patch -p0
+
+EXIT="$?"
+
+if [ "$EXIT" = "0" ]
+then
+	msg "patch bash32-056 successfully applied"
+else
+	die "patch bash32-056 FAILED"
+fi
+
+##################################################################################################
+
 cd ..
 
 msg "CWD is now $PWD"
 
 cat <<EOINPUT
 
-$NAME: about to run xcodebuild:
-	(NOTE: it is completely normal to see A LOT OF messages after this.
-	 As long as you see '** BUILD SUCCEEDED **' at the end, you are OK.
-	 Please be patient, this WILL take a few minutes...)
+$NAME: about to run xcodebuild. This could take several minutes.
 
+Output is being directed to $ORIG_DIR/xcodebuild.log
+
+Please wait...
 EOINPUT
 
-xcodebuild 2>&1 | tee -a "$ORIG_DIR/xcodebuild.log" \
-	|| die "xcodebuild failed (\$EXIT = $EXIT). See $ORIG_DIR/xcodebuild.log for details."
+xcodebuild 2>&1 >>| "$ORIG_DIR/xcodebuild.log"
+
+
+EXIT="$?"
+
+if [ "$EXIT" = "0" ]
+then
+	msg "xcodebuild exited successfully."
+
+else
+	die "xcodebuild failed (\$EXIT = $EXIT). See $ORIG_DIR/xcodebuild.log for details."
+	exit 1
+fi
+
 
 	# Play a sound to tell them the build finished
 [[ -e /System/Library/Sounds/Glass.aiff ]] && afplay /System/Library/Sounds/Glass.aiff
