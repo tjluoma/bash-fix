@@ -148,17 +148,9 @@ cd ..
 
 msg "CWD is now $PWD"
 
-cat <<EOINPUT
-
-$NAME: about to run xcodebuild. This could take several minutes.
-
-Output is being directed to $ORIG_DIR/xcodebuild.log
-
-Please wait...
-EOINPUT
+echo -n "$NAME is about to run xcodebuild and its output redirected to $ORIG_DIR/xcodebuild.log. If it does not succeed, check the log for error messages.\n\nThis could take a few minutes. Please wait... "
 
 xcodebuild 2>&1 >>| "$ORIG_DIR/xcodebuild.log"
-
 
 EXIT="$?"
 
@@ -273,7 +265,23 @@ msg "Removing executable bit from /bin/sh.$TIME"
 sudo /bin/chmod a-x "/bin/sh.$TIME" \
 	|| msg "WARNING: Failed to remove executable bit from /bin/sh.$TIME"
 
-msg "$NAME has finished successfully. You can delete the $ORIG_DIR folder (or move it to the trash) if you'd like."
+msg "$NAME has finished successfully."
+
+
+read "?Do you want to move $ORIG_DIR to ~/.Trash/? [Y/n]  " ANSWER
+
+case "$ANSWER" in
+	N*|n*)
+			echo "$NAME: Not moving $ORIG_DIR."
+			exit 0
+	;;
+
+	*)
+			mv -vn "$ORIG_DIR" "$HOME/.Trash/$ORIG_DIR.$EPOCHSECONDS"
+			exit 0
+	;;
+
+esac
 
 exit
 #
