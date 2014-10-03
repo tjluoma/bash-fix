@@ -27,7 +27,7 @@ If you are a regular Mac user and aren’t running a Mac server, you probably do
 However, I _do_ run a Mac server (at the awesome [MacMiniColo][]) and wanted to keep my version of bash “more current” so I installed 
 Apple’s fix and then re-ran this script.
 
-I will continue to update this script as I learn of more vulnerabilities. Pull requests for new official patches are always welcome. Thanks to [those who have already contributed][7].
+I will continue to update this script as I learn of more vulnerabilities. Pull requests for new official patches are always welcome. Thanks to [those who have already contributed][7], including [Rosyna Keller][8] via Twitter.
 
 ## Disclaimer
 
@@ -81,5 +81,8 @@ _Fix:_ Enter `sudo xcodebuild -license` into Terminal, read and agree to terms, 
 [5]:	http://support.apple.com/kb/DL1767
 [6]:	http://www.troyhunt.com/2014/09/everything-you-need-to-know-about.html?m=1
 [7]:	https://github.com/tjluoma/bash-fix/graphs/contributors
+[8]:	https://twitter.com/rosyna/status/518054086050971650
+
+
 [MacMiniColo]:	http://MacMiniColo.net
 [Xcode]:	http://itunes.apple.com/us/app/xcode/id497799835?mt=12
