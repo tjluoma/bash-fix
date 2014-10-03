@@ -5,33 +5,29 @@ bash-fix
 
 Download and compile a new version of bash to replace vulnerable one.
 
-## “Didn’t Apple fix this?”
+Derived from [Alex Blewitt’s original][1] which I first saw when he posted it on [the Apple StackExchange site][2].
 
-Yes and no.
+
+## “Didn’t Apple fix this?”
 
 On 30 September 2014 Apple made official patches available for the following versions of OS X:
 
-* [Mavericks](http://support.apple.com/kb/DL1769)
-* [Mountain Lion](http://support.apple.com/kb/DL1768)
-* [Lion](http://support.apple.com/kb/DL1767)
+* [Mavericks][3]
+* [Mountain Lion][4]
+* [Lion][5]
 
-However, Apple’s fixed `bash` is `GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)` which is still vulnerable to this:
+Apple’s fixed `bash` is `GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)`.
 
-	env '__BASH_FUNC<ls>()'="() { echo Game Over; }" /bin/bash -c ls
+As I understand it, that solved the remotely exploitable part of the [shellshock][6] vulnerability. So if that’s all you are worried about, you should be safe after applying the appropriate update from Apple.
 
-**Other problems are still being found and patched.**
+**However, other problems are still being found and patched.**
 
-As of 2014-10-02, compiling `bash` from this script will build `GNU bash, version 3.2.56(1)-release (x86_64-apple-darwin13)`.
+If you are a regular Mac user and aren’t running a Mac server, you probably don’t need to worry about anything beyond Apple’s official fix.
 
-There may _still_ be vulnerabilities in `GNU bash, version 3.2.56(1)-release (x86_64-apple-darwin13)` but I’d rather be current on my Mac servers. 
+However, I _do_ run a Mac server (at the awesome [MacMiniColo][]) and wanted to keep my version of bash “more current” so I installed 
+Apple’s fix and then re-ran this script.
 
-If you are a regular Mac user and aren’t running a Mac server, you _probably_ don’t need to worry about this and can wait for Apple’s next official update. If you _are_ running a Mac server, you should find some way to stay current, whether it is this script or your own.
-
-(Personally, I installed Apple’s fix and then re-ran this script to have a more current version of `bash`. )
-
-I will continue to update this script as I learn of more vulnerabilities. Pull requests for new official patches are always welcome. Thanks to [those who have already contributed](https://github.com/tjluoma/bash-fix/graphs/contributors).
-
-
+I will continue to update this script as I learn of more vulnerabilities. Pull requests for new official patches are always welcome. Thanks to [those who have already contributed][7].
 
 ## Disclaimer
 
@@ -42,21 +38,16 @@ No warranty expressed or implied for any suitability for any purpose.
 If something breaks, you own both pieces and all of the responsibility, and so on.
 
 
-## Background ##
-
-[Troy Hunt: Everything you need to know about the Shellshock Bash bug](http://www.troyhunt.com/2014/09/everything-you-need-to-know-about.html?m=1)
-
 ## How To Install/Use ##
 
-1. [Install Xcode](macappstore://itunes.apple.com/us/app/xcode/id497799835?mt=12) if it is not already installed.
+1. Install [Xcode][] if it is not already installed.
 
-2.	Launch Terminal.app (or iTerm)
 
+2.	Launch **Terminal.app** (or [iTerm](http://iterm2.com))
 
 3. If this is your first time using Xcode’s command line tools, you will have to agree to the terms and conditions by using 
 
 	`sudo xcodebuild -license`
-
 
 4.	Run this command 
 
@@ -72,6 +63,8 @@ When you are done, `bash --version` should report itself as:
 
 **GNU bash, version 3.2.56(1)-release (x86_64-apple-darwin13)**
 
+(or possibly later, if more patches have been added and I forgot to update the README.)
+
 ## Troubleshooting: ##
 
 _Error:_ **“build/Release/bash does not exist.”**
@@ -80,7 +73,13 @@ _Fix:_ Enter `sudo xcodebuild -license` into Terminal, read and agree to terms, 
 
 
 
-## Sources: 
 
-1.	<http://apple.stackexchange.com/questions/146849/how-do-i-recompile-bash-to-avoid-the-remote-exploit-cve-2014-6271-and-cve-2014-7/146851#146851> 
-2.	<http://alblue.bandlem.com/2014/09/bash-remote-vulnerability.html>
+[1]:	http://alblue.bandlem.com/2014/09/bash-remote-vulnerability.html
+[2]:	http://apple.stackexchange.com/questions/146849/how-do-i-recompile-bash-to-avoid-the-remote-exploit-cve-2014-6271-and-cve-2014-7/146851#146851
+[3]:	http://support.apple.com/kb/DL1769
+[4]:	http://support.apple.com/kb/DL1768
+[5]:	http://support.apple.com/kb/DL1767
+[6]:	http://www.troyhunt.com/2014/09/everything-you-need-to-know-about.html?m=1
+[7]:	https://github.com/tjluoma/bash-fix/graphs/contributors
+[MacMiniColo]:	http://MacMiniColo.net
+[Xcode]:	macappstore://itunes.apple.com/us/app/xcode/id497799835?mt=12
