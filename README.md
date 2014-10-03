@@ -82,4 +82,4 @@ _Fix:_ Enter `sudo xcodebuild -license` into Terminal, read and agree to terms, 
 [6]:	http://www.troyhunt.com/2014/09/everything-you-need-to-know-about.html?m=1
 [7]:	https://github.com/tjluoma/bash-fix/graphs/contributors
 [MacMiniColo]:	http://MacMiniColo.net
-[Xcode]:	macappstore://itunes.apple.com/us/app/xcode/id497799835?mt=12
+[Xcode]:	http://itunes.apple.com/us/app/xcode/id497799835?mt=12
