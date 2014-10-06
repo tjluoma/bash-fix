@@ -24,7 +24,7 @@ As I understand it, that solved the remotely exploitable part of the [shellshock
 
 If you are a regular Mac user and aren’t running a Mac server, you probably don’t need to worry about anything beyond Apple’s official fix.
 
-However, I _do_ run a Mac server (at the awesome [MacMiniColo][]) and wanted to keep my version of bash “more current” so I installed 
+However, I _do_ run a Mac server (at the awesome [MacMiniColo][]) and wanted to keep my version of bash “more current” so I installed
 Apple’s fix and then re-ran this script.
 
 I will continue to update this script as I learn of more vulnerabilities. Pull requests for new official patches are always welcome. Thanks to [those who have already contributed][7], including [Rosyna Keller][8] via Twitter.
@@ -33,7 +33,7 @@ I will continue to update this script as I learn of more vulnerabilities. Pull r
 
 **As always, YMMV, and use _entirely_ at your own risk.**
 
-No warranty expressed or implied for any suitability for any purpose. 
+No warranty expressed or implied for any suitability for any purpose.
 
 If something breaks, you own both pieces and all of the responsibility, and so on.
 
@@ -45,23 +45,23 @@ If something breaks, you own both pieces and all of the responsibility, and so o
 
 2.	Launch **Terminal.app** (or [iTerm](http://iterm2.com))
 
-3. If this is your first time using Xcode’s command line tools, you will have to agree to the terms and conditions by using 
+3. If this is your first time using Xcode’s command line tools, you will have to agree to the terms and conditions by using
 
 	`sudo xcodebuild -license`
 
-4.	Run this command 
+4.	Run this command
 
 		curl -sL http://luo.ma/bash-fix.sh | zsh -f
 
 	That’s just a short URL for <https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh> but if you would rather not use the short URL, use this instead:
 
 		curl -s https://raw.githubusercontent.com/tjluoma/bash-fix/master/bash-fix.sh | zsh -f
-	
+
 4.	Follow prompts
 
 When you are done, `bash --version` should report itself as:
 
-**GNU bash, version 3.2.56(1)-release (x86_64-apple-darwin13)**
+**GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin13)**
 
 (or possibly later, if more patches have been added and I forgot to update the README.)
 
