@@ -142,6 +142,21 @@ else
 	die "patch bash32-056 FAILED"
 fi
 
+
+##################################################################################################
+
+msg "Downloading and applying bash32-057 from gnu.org..."
+curl --progress-bar -fL https://ftp.gnu.org/pub/gnu/bash/bash-3.2-patches/bash32-057 | patch -p0
+
+EXIT="$?"
+
+if [ "$EXIT" = "0" ]
+then
+	msg "patch bash32-057 successfully applied"
+else
+	die "patch bash32-057 FAILED"
+fi
+
 ##################################################################################################
 
 cd ..
@@ -277,7 +292,8 @@ case "$ANSWER" in
 	;;
 
 	*)
-			mv -vn "$ORIG_DIR" "$HOME/.Trash/$ORIG_DIR.$EPOCHSECONDS"
+			echo
+			mv -vn "$ORIG_DIR" "$HOME/.Trash/$ORIG_DIR:t.$EPOCHSECONDS"
 			exit 0
 	;;
 
